@@ -14,8 +14,21 @@ def count_number_of_digits(num):
             count += 1
         return count
     else:
-        print(f'the given input {num} is not a positive integer')
+        print(f'the given input {num} must be a positive integer')
 
+def is_even(num):
+    '''
+
+    :param num: A number
+    :return: The number is even or not
+    '''
+    if (isinstance(num, int)) | (isinstance(num, float)):
+        if num%2==0:
+            return True
+        else:
+            return False
+    else:
+        print(f'the given input {num} must be an integer or a float')
 
 x = int(input('please enter a number(integer)'))
 y = int(input('please enter another number(integer)'))
