@@ -95,8 +95,8 @@ def merge_sort(lst):
 
     if lst_len <= 1:
         return lst
-    elif lst_len == 2:
-        return sort_list(lst)
+    # elif lst_len == 2:
+    #     return sort_list(lst)
     else:
         lst_split_len = lst_len // 2
         first_lst = lst[:lst_split_len]
