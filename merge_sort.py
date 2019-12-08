@@ -10,6 +10,7 @@ upper_bound = int(input('Upper bound of the array to be sorted'))
 size = int(input('size of the array to be sorted'))
 
 lst = gen_int_array(lower_bound, upper_bound, size)
+
 start = time.clock()
 machine_sort = sorted(lst)
 end = time.clock()
@@ -45,21 +46,42 @@ def combine_2_sorted_arrays(lst1, lst2):
     :return:
     '''
 
-    if lst1[0] > lst2[0]:
-        lst1, lst2 = lst2, lst1
+    # if lst1[0] > lst2[0]:
+    #     lst1, lst2 = lst2, lst1
+    #
+    # for idx_2 in range(len(lst2)):
+    #     for idx_1 in range(len(lst1)):
+    #         try:
+    #             if (lst2[idx_2] >= lst1[idx_1]) & (lst2[idx_2] <= lst1[idx_1+1]):
+    #                 lst1.insert(idx_1+1, lst2[idx_2])
+    #                 break
+    #         except:
+    #             lst1.insert(len(lst1), lst2[idx_2])
+    #             break
+    # return lst1
 
-    for idx_2 in range(len(lst2)):
-        for idx_1 in range(len(lst1)):
-            try:
-                if (lst2[idx_2] >= lst1[idx_1]) & (lst2[idx_2] <= lst1[idx_1+1]):
-                    lst1.insert(idx_1+1, lst2[idx_2])
-                    break
-            except:
-                lst1.insert(len(lst1), lst2[idx_2])
-                break
+    i, j = 0, 0
 
+    t = len(lst1) + len(lst2)
+    final_lst = np.zeros(t)
 
-    return lst1
+    for k in range(t):
+        try:
+            if lst1[i] < lst2[j]:
+                final_lst[k] = lst1[i]
+                i += 1
+            else:
+                final_lst[k] = lst2[j]
+                j += 1
+        except:
+
+            if i < len(lst1):
+                final_lst[k:] = lst1[i:]
+            elif j < len(lst2):
+                final_lst[k:] = lst2[j:]
+            break
+
+    return final_lst
 
 
 def merge_sort(lst):
@@ -88,19 +110,16 @@ merge_sort = merge_sort(lst)
 end = time.clock()
 print('the time taken by merge sort is {}'.format(end-start))
 
-print(merge_sort)
-if machine_sort == merge_sort:
+if (machine_sort == merge_sort).all():
     print('The merge sort algorithm implementation is right')
 else:
     print('The merge sort algorithm implementation still needs work')
 
-start = time.clock()
-simple_sort = sort_list(lst)
-end = time.clock()
-print('the time taken by simple sort is {}'.format(end-start))
-
-
-
+## takes way too long to run
+# start = time.clock()
+# simple_sort = sort_list(lst)
+# end = time.clock()
+# print('the time taken by simple sort is {}'.format(end-start))
 
 
 
