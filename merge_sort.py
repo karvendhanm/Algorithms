@@ -71,7 +71,7 @@ def merge_sort(lst):
 
     lst_len = len(lst)
 
-    if lst_len == 1:
+    if lst_len <= 1:
         return lst
     elif lst_len == 2:
         return sort_list(lst)
