@@ -1,4 +1,7 @@
 # A function must have two blank lines before it
+import numpy as np
+
+
 def count_number_of_digits(num):
     '''
 
@@ -39,3 +42,16 @@ def is_even(num):
 
 # x = int(input('please enter a number(integer)'))
 # y = int(input('please enter another number(integer)'))
+
+
+def gen_int_array(lower_bound, upper_bound, size):
+    '''
+
+    :param lower_bound: lowest number allowed in the array
+    :param upper_bound: biggest number allowed in the array + 1
+    :param size: number of elements in the array
+    :return: an integer array
+    '''
+    return list(np.random.randint(low=lower_bound, high=upper_bound, size=size))
+
+
