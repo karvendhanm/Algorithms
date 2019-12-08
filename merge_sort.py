@@ -3,13 +3,17 @@ import warnings
 warnings.filterwarnings('ignore')
 
 from basic_finctions import *
+import time
 
 lower_bound = int(input('Lower bound of the array to be sorted'))
 upper_bound = int(input('Upper bound of the array to be sorted'))
 size = int(input('size of the array to be sorted'))
 
 lst = gen_int_array(lower_bound, upper_bound, size)
+start = time.clock()
 machine_sort = sorted(lst)
+end = time.clock()
+print('the time taken by the machine is {}'.format(end-start))
 
 
 def sort_list(lst):
@@ -31,6 +35,7 @@ def sort_list(lst):
             status = False
 
     return lst
+
 
 def combine_2_sorted_arrays(lst1, lst2):
     '''
@@ -78,13 +83,21 @@ def merge_sort(lst):
 
     return lst_final
 
-my_sort = merge_sort(lst)
+start = time.clock()
+merge_sort = merge_sort(lst)
+end = time.clock()
+print('the time taken by merge sort is {}'.format(end-start))
 
-print(my_sort)
-if machine_sort == my_sort:
+print(merge_sort)
+if machine_sort == merge_sort:
     print('The merge sort algorithm implementation is right')
 else:
     print('The merge sort algorithm implementation still needs work')
+
+start = time.clock()
+simple_sort = sort_list(lst)
+end = time.clock()
+print('the time taken by simple sort is {}'.format(end-start))
 
 
 
