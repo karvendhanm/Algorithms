@@ -1,7 +1,7 @@
 # A recursive algorithm to multiply two numbers
 
 from ast import literal_eval
-# from basic_finctions import count_number_of_digits
+# from basic_finctions import *
 
 
 x = float(input('Enter the first number (only float or an integer is allowed)'))
