@@ -3,8 +3,9 @@
 from ast import literal_eval
 from basic_finctions import *
 
+
 x = float(input('Enter the first number (only float or an integer is allowed)'))
-y = float(input('Enter the first number (only float or an integer is allowed)'))
+y = float(input('Enter the second number (only float or an integer is allowed)'))
 
 def gaussian_trick(a, b, c, d):
     '''
@@ -74,5 +75,11 @@ def multiply_two_numbers(x_1, x_2):
     return prod
 
 
-print(multiply_two_numbers(x, y))
+recursive_mul = multiply_two_numbers(x, y)
+machine_mul =  x * y
+
+if recursive_mul == machine_mul:
+    print('Recursive multiplication implementation is correct')
+
+print('the local algo answer is {:.200f}\nthe mchne algo answer is {:.200f}'.format(recursive_mul, machine_mul))
 
