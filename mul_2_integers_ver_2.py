@@ -1,11 +1,34 @@
 # A recursive algorithm to multiply two numbers
 
 from ast import literal_eval
-from basic_finctions import count_number_of_digits
+# from basic_finctions import count_number_of_digits
 
 
 x = float(input('Enter the first number (only float or an integer is allowed)'))
 y = float(input('Enter the second number (only float or an integer is allowed)'))
+
+def count_number_of_digits(num):
+    '''
+
+    :param num: An integer
+    :return: The number of digits in the integer
+    '''
+
+    if (isinstance(num, int)) | (isinstance(num, float)):
+        num = abs(int(num))
+
+        # if the given number is zero itself, then it has 1 digit
+        if num == 0:
+            return 1
+
+        count = 0
+
+        while num > 0:
+            num = num // 10
+            count += 1
+        return count
+    else:
+        print(f'the given input {num} must be a number')
 
 def gaussian_trick(a, b, c, d):
     '''
