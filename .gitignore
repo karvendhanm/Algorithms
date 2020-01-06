@@ -2,3 +2,5 @@
 temp.py
 data
 venv
+san_diego/__pycache__/
+test_module/__pycache__/
