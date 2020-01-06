@@ -67,7 +67,7 @@ if __name__ == '__main__':
     mystmt_1= "get_nth_fibonacci_number(100)"
     mysetup_2 = "from __main__ import get_nth_fibonacci_number_slow"
     mystmt_2= "get_nth_fibonacci_number_slow(100)"
-    mysetup_3 = "from __main__ import get_nth_fibonacci_number_own_cache; from __main__ import fibonacci_cache"
+    mysetup_3 = "from __main__ import get_nth_fibonacci_number_own_cache"
     mystmt_3 = "get_nth_fibonacci_number_own_cache(100)"
     t_1 = timeit(stmt=mystmt_1, setup=mysetup_1, number=1000000)
     t_2 = timeit(stmt=mystmt_2, setup=mysetup_2, number=1000000)
