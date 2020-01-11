@@ -35,7 +35,7 @@ def get_nth_fibonacci_number_own_cache(n):
     if n <= 1:
         val = n
     else:
-        val = get_nth_fibonacci_number(n-1) + get_nth_fibonacci_number(n-2)
+        val = get_nth_fibonacci_number_own_cache(n-1) + get_nth_fibonacci_number_own_cache(n-2)
 
     fibonacci_cache[n] = val
     return val
@@ -57,7 +57,7 @@ def get_nth_fibonacci_number_slow(n):
 
 
 if __name__ == '__main__':
-    for n in range(1000):
+    for n in range(2000):
         # print(f'getting the nth fibonacci number: {n}')
         assert get_nth_fibonacci_number(n) == get_nth_fibonacci_number_slow(n), 'fibonacci implementation is wrong'
         assert get_nth_fibonacci_number(n) == get_nth_fibonacci_number_own_cache(n), 'fibonacci implementation is wrong'
