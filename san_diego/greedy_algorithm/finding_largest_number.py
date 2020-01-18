@@ -44,10 +44,8 @@ def get_largest_number(lst):
 
 if __name__ == "__main__":
     for _ in range(100):
-        lst = random.choices(range(100000), k=random.choice(range(100)))
+        lst = random.choices(range(100000), k=random.choice(range(1, 100)))
         assert get_largest_number(lst) == get_largest_number_inbuilt(lst), 'greedy algorithm implementation is wrong'
-
-
 
 
 
