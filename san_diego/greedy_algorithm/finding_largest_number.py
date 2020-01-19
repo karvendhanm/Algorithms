@@ -58,7 +58,7 @@ if __name__ == "__main__":
     for _ in range(10):
         lst = random.choices(range(10000), k=random.choice(range(1, 100)))
         assert get_largest_number_relatively_fast(lst) == get_largest_number_inbuilt(lst), 'greedy algorithm implementation is wrong'
-    mystmt = '''get_largest_number_relatively_fast([4, 42, 46, 427, 465])'''
+    mystmt = '''get_largest_number_relatively_fast([5, 52, 57, 517, 532, 569, 581])'''
     mysetup = '''from operator import itemgetter; from __main__ import  get_largest_number_relatively_fast'''
     t_mymethod = timeit.timeit(stmt=mystmt, setup=mysetup, number=1000000)
     builtinstmt = '''get_largest_number_inbuilt([5, 52, 57, 517, 532, 569, 581])'''
