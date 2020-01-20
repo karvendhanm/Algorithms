@@ -5,3 +5,4 @@ venv
 san_diego/__pycache__/
 test_module/__pycache__/
 san_diego/.ipynb_checkpoints/
+.ipynb_checkpoints/
