@@ -22,9 +22,9 @@ def minimum_required_refills(x, n, L):
     return 1 + minimum_required_refills(list(x_arr[np.logical_not(bool_arr)] - dist_travelled), n, L-dist_travelled)
 
 
-x = [0, 50, 420, 712, 888, 888, 1112, 1500, 1900]
+x = [0, 50, 420, 712, 888, 888, 1112, 1500, 1900, 2300]
 n = 400
-L = 2301
+L = 2300
 
 print(minimum_required_refills(x, n, L))
 
