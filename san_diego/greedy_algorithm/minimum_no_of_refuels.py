@@ -1,7 +1,7 @@
-# This problem seeks to find the minimum number of refuels to get from point A to point B
+# This problem seeks to find the minimum number of refueling stops to get from point A to point B
 # seperated by distance(L) in km. There are number of gas stations in between A and B whose
-# distances from A is given by the list x in kms. Also, the distance that a car could
-# travel after 1 refueling is given by n in kms.
+# distances from A is given by the list x in kms. Also, the maximum distance that a car could
+# travel after one refueling is given by n in kms.
 
 import numpy as np
 
